@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var pointureLbl: UILabel!
     @IBOutlet weak var infoLbl: UILabel!
     
+    
     var name: String = ""
     var categories: String = "city"
     var categoriesFR: String = "ville"
