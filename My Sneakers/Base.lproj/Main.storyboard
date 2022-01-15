@@ -1,24 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="My_Sneakers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Sneakers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKG-g3-7pU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ljL-Fz-pKO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="36"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entrer votre nom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ask-Um-KiR">
+                                <rect key="frame" x="20" y="104" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fkm-pS-D7c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cuc-V3-qU9">
+                                <rect key="frame" x="20" y="159" width="374" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="T4h-ca-WAs"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Ville"/>
+                                    <segment title="Running"/>
+                                    <segment title="BasketBall"/>
+                                </segments>
+                                <connections>
+                                    <action selector="categorysSeg:" destination="BYZ-38-t0r" eventType="valueChanged" id="kkQ-ec-rQh"/>
+                                </connections>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="96A-e1-Knc">
+                                <rect key="frame" x="20" y="214" width="374" height="35"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Homme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rH5-Pm-Zk7">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="7hz-bg-Oid"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rgA-fa-2vd">
+                                        <rect key="frame" x="325" y="0.0" width="51" height="35"/>
+                                        <connections>
+                                            <action selector="genderSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="CnR-Od-24I"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="0ff-lM-wn1"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="187" translatesAutoresizingMaskIntoConstraints="NO" id="Tmg-lu-vIl">
+                                <rect key="frame" x="20" y="269" width="374" height="32"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pointure: 36" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLr-I9-1Fv">
+                                        <rect key="frame" x="0.0" y="0.0" width="93" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="1ad-L1-bS6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="55" minimumValue="36" maximumValue="55" translatesAutoresizingMaskIntoConstraints="NO" id="a8b-Jv-2Wn">
+                                        <rect key="frame" x="280" y="0.0" width="94" height="32"/>
+                                        <connections>
+                                            <action selector="pointureStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="UIj-ok-xdK"/>
+                                        </connections>
+                                    </stepper>
+                                </subviews>
+                            </stackView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXx-vN-OHA">
+                                <rect key="frame" x="20" y="321" width="374" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="lr0-b5-oGm"/>
+                                </constraints>
+                            </pickerView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boy_city_white" translatesAutoresizingMaskIntoConstraints="NO" id="Wk1-Cw-N0a">
+                                <rect key="frame" x="20" y="461" width="374" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="HMK-xT-CcL"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="J'ai trouvé pour vous cette chaussure dans la pointure 36" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPR-9j-5va">
+                                <rect key="frame" x="20" y="681" width="374" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="cMm-ZO-DwF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Wk1-Cw-N0a" firstAttribute="top" secondItem="UXx-vN-OHA" secondAttribute="bottom" constant="20" id="0ih-87-qAV"/>
+                            <constraint firstAttribute="trailing" secondItem="sPR-9j-5va" secondAttribute="trailing" constant="20" id="1fq-I8-zOX"/>
+                            <constraint firstItem="sPR-9j-5va" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6kn-qf-enB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cuc-V3-qU9" secondAttribute="trailing" constant="20" id="ABv-5X-T63"/>
+                            <constraint firstItem="yKG-g3-7pU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="G0x-GY-2Gc"/>
+                            <constraint firstItem="UXx-vN-OHA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="KBf-tl-tD9"/>
+                            <constraint firstItem="sPR-9j-5va" firstAttribute="top" secondItem="Wk1-Cw-N0a" secondAttribute="bottom" constant="20" id="Kmc-31-MX0"/>
+                            <constraint firstItem="Tmg-lu-vIl" firstAttribute="top" secondItem="96A-e1-Knc" secondAttribute="bottom" constant="20" id="N8w-uM-KKh"/>
+                            <constraint firstItem="Wk1-Cw-N0a" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="P4O-aO-zod"/>
+                            <constraint firstItem="Wk1-Cw-N0a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Pmr-SC-2rl"/>
+                            <constraint firstItem="yKG-g3-7pU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QgO-IK-Xin"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tmg-lu-vIl" secondAttribute="trailing" constant="20" id="QrT-i1-PSK"/>
+                            <constraint firstItem="96A-e1-Knc" firstAttribute="top" secondItem="cuc-V3-qU9" secondAttribute="bottom" constant="20" id="TSb-FB-6uI"/>
+                            <constraint firstItem="Tmg-lu-vIl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Xou-ob-LHi"/>
+                            <constraint firstItem="cuc-V3-qU9" firstAttribute="top" secondItem="ask-Um-KiR" secondAttribute="bottom" constant="15" id="bPo-KE-eay"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="96A-e1-Knc" secondAttribute="trailing" constant="20" id="c8L-DK-erk"/>
+                            <constraint firstItem="ask-Um-KiR" firstAttribute="top" secondItem="yKG-g3-7pU" secondAttribute="bottom" constant="10" id="dZw-nN-0En"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yKG-g3-7pU" secondAttribute="trailing" id="f2a-fI-qWC"/>
+                            <constraint firstItem="UXx-vN-OHA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="itL-a4-Xsk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ask-Um-KiR" secondAttribute="trailing" constant="20" id="iu6-Ne-IhU"/>
+                            <constraint firstItem="ask-Um-KiR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="klh-yV-FsQ"/>
+                            <constraint firstItem="cuc-V3-qU9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mTZ-rn-1Jj"/>
+                            <constraint firstItem="96A-e1-Knc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oNj-6G-Rvc"/>
+                            <constraint firstItem="UXx-vN-OHA" firstAttribute="top" secondItem="Tmg-lu-vIl" secondAttribute="bottom" constant="20" id="sUq-YQ-VAB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="96A-e1-Knc" secondAttribute="trailing" constant="20" id="zG5-3A-SvG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="colorPicker" destination="UXx-vN-OHA" id="tIL-P4-FdL"/>
+                        <outlet property="infoLbl" destination="sPR-9j-5va" id="0cn-q1-qUa"/>
+                        <outlet property="nameT" destination="ask-Um-KiR" id="8Bb-ZC-3Sx"/>
+                        <outlet property="pointureLbl" destination="dLr-I9-1Fv" id="cfd-tU-xeG"/>
+                        <outlet property="sneakerImg" destination="Wk1-Cw-N0a" id="r8c-sz-N7G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="boy_city_white" width="500" height="500"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
